@@ -1,0 +1,28 @@
+ÀÄmain
+   ÃÄMAIN  0/419  Ram=3
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄrs485_init  0/23  Ram=0
+   ³  ³  ÀÄRCV_ON  (Inline)  Ram=0
+   ³  ³     ÀÄ@GETCH_BIU_1  0/20  Ram=0
+   ³  ÀÄAssignDigits  0/90  Ram=2
+   ³     ÃÄConvertDECtoBCD  (Inline)  Ram=5
+   ³     ³  ÃÄ@DIV1616  0/37  Ram=5
+   ³     ³  ÃÄ@MUL1616  0/21  Ram=5
+   ³     ³  ÃÄ@DIV1616  0/37  Ram=5
+   ³     ³  ÃÄ@MUL1616  0/21  Ram=5
+   ³     ³  ÀÄ@MUL1616  0/21  Ram=5
+   ³     ÃÄConvert7Segment  0/36  Ram=1
+   ³     ³  ÀÄ@goto4426  0/14  Ram=0
+   ³     ÃÄConvert7Segment  0/36  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÀÄConvert7Segment  0/36  Ram=1
+   ³        ÀÄ*
+   ÃÄincomming_rs485  0/85  Ram=2
+   ³  ÃÄ@GETCH_BIU_1  0/20  Ram=0
+   ³  ÃÄrs485_add_to_temp  0/15  Ram=3
+   ³  ÃÄrs485_add_to_temp  0/15  Ram=3
+   ³  ÃÄrs485_add_to_temp  0/15  Ram=3
+   ³  ÃÄrs485_add_to_temp  0/15  Ram=3
+   ³  ÀÄrs485_add_to_temp  0/15  Ram=3
+   ÀÄTIMER0_isr  0/50  Ram=0
+      ÀÄDisplayDrive  (Inline)  Ram=0

@@ -1,0 +1,7 @@
+Compiling C:\Users\Planlama\Desktop\RS485\main on 17-Mar-20 at 14:50
+C:\Users\Planlama\Desktop\RS485\main.c:92:1:  Warning#203  Condition always TRUE
+C:\Users\Planlama\Desktop\RS485\main.c:89:8:  Warning#202  Variable never used:   ahmet
+C:\Users\Planlama\Desktop\RS485\main.c:90:14:  Warning#202  Variable never used:   old_veli
+      Memory usage:   ROM=5%      RAM=3% - 4%
+      0 Errors,  3 Warnings.
+Build Successful.
