@@ -88,6 +88,7 @@ void main ()
     
    int ahmet[]={99};
    int  veli,old_veli;
+   unsigned int8 reflected_msg[3];
     
 	while(1)
 		{
@@ -112,18 +113,22 @@ void main ()
 				///////
                 
                 veli=rs485_buffer[6];
+                reflected_msg[0] = rs485_buffer[4];
+                reflected_msg[1] = rs485_buffer[5];
+                reflected_msg[2] = rs485_buffer[6];
                 AssignDigits(veli);
-                rs485_ni=0;
+                    rs485_ni=0;
                 
-//                if(veli!=old_veli)
-//                {
+                if(veli!=old_veli)
+                {
 //                    
-//                    //memset(&rs485_buffer, 0, sizeof(rs485_buffer));
-//                    
-////                    delay_ms(5);
-////                    rs485_send_message(RS485_DEST_ID,1,&veli);
-//                }
-//                old_veli=veli; 
+//                    memset(&rs485_buffer, 0, sizeof(rs485_buffer));
+//                    AssignDigits(veli);
+//                    rs485_ni=0;
+                    delay_ms(5);
+                    rs485_send_message(RS485_DEST_ID,sizeof(reflected_msg),&reflected_msg);
+                }
+                old_veli=veli; 
 
 			}	
 

@@ -1,67 +1,70 @@
 
-ROM used:   848/16384 (5%)
-            848/16384 (5%) including unused fragments
+ROM used:   1045/16384 (6%)
+            1045/16384 (6%) including unused fragments
 
             0.4 Average locations per line
-            2.6 Average locations per statement
+            3.1 Average locations per statement
 
-RAM used:   56/2048 (3%) at main() level
-            84/2048 (4%) worst case
+RAM used:   60/2048 (3%) at main() level
+            89/2048 (4%) worst case
 
 Stack used: 0 worst case (0 in main + 0 for interrupts)
 Stack size: 16
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  184    67  21  main.c
+  189    75  22  main.c
  1210     0   0  ..\..\..\..\Program Files (x86)\PICC\devices\16F1788.h
    37     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h
-  435   129  40  ..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+  435   129  39  ..\..\..\..\Program Files (x86)\PICC\drivers\string.h
    32     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
    28     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
    27     0   0  Definition.h
    33    16   5  DisplayDrive.h
    49    21   6  LookUpTable.h
-  335    93  29  ..\..\..\..\Program Files (x86)\PICC\drivers\rs485.c
+  336    94  28  ..\..\..\..\Program Files (x86)\PICC\drivers\rs485.c
 ----- -----
- 2370   326 Total
+ 2376   335 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
+0     22   2    1             @delay_ms1
  Inline         0    349  4.2  DisplayDrive
-0     36   4    1    648  3.4  Convert7Segment
-0     14   2    0             @goto4426
+0     36   3    1    648  3.4  Convert7Segment
+0     14   1    0             @goto4916
 0     20   2    0             @GETCH_BIU_1
- Inline         0    104  2.1  RCV_ON
-0     23   3    0    143  2.2  rs485_init
-0     15   2    3    118  3.9  rs485_add_to_temp
-0     85  10    2   1145 10.0  incomming_rs485
-0     50   6    0     45  1.4  TIMER0_isr
+0     64   6    2             @PUTCHAR_2_
+0     11   1    0    104  2.1  RCV_ON
+0     14   1    0    143  2.2  rs485_init
+0     15   1    4    118  3.9  rs485_add_to_temp
+0     85   8    2   1145 10.0  incomming_rs485
+0     85   8   11    966  9.4  rs485_send_message
+0     50   5    0     45  1.4  TIMER0_isr
  Inline         5    186  3.1  ConvertDECtoBCD
 0     37   4    5             @DIV1616
 0     21   2    5             @MUL1616
-0     90  11    2    141  1.9  AssignDigits
-0    419  49    3   1400  5.9  MAIN
+0     90   9    2    141  1.9  AssignDigits
+0    443  42    6   1860  7.5  MAIN
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               10
-    Statements              326
-    Comments                561
-    Volume (V)              6359
-    Difficulty (D)          38.2
-    Effort to implement (E) 243025
-    Time to implement (T)   3 hours, 45 minutes
-    Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   28
-    Maintainability (MI)    39
+    Functions               11
+    Statements              335
+    Comments                555
+    Volume (V)              8482
+    Difficulty (D)          49.1
+    Effort to implement (E) 416090
+    Time to implement (T)   6 hours, 25 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   32
+    Maintainability (MI)    30
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     3  0  
 00003-00003     0  1  
 00004-00026    35  0  
-00027-007FF   810  1199  
+00027-007FF  1007  1002  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

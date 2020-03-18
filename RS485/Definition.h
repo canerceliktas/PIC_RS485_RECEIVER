@@ -18,7 +18,7 @@
 
 
 
-
+int1    snd;
 unsigned int8   TIME_MAKER,REG_10ms,REG_50ms,REG_100ms,REG_500ms,REG_1s,REG_10s;
 unsigned int8   DigitOrder,DIGIT_1,DIGIT_2,DIGIT_3,DIGIT_TEMP;
 unsigned int8   data;

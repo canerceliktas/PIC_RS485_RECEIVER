@@ -1,7 +1,7 @@
 D G "__PCM__" 0 0 ""5.076""
 D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""17-Mar-20""
-D G "__TIME__" 0 0 ""14:50:09""
+D G "__DATE__" 0 0 ""18-Mar-20""
+D G "__TIME__" 0 0 ""09:25:22""
 D G "_UNICODE" 0 0 ""?""
 D G "__EVAL" 0 0 ""?""
 D G "__16F1788" 0 0 "1" "* File:   main.c"
@@ -1805,60 +1805,61 @@ D G "RS485_RX_BUFFER_SIZE" 6 12 "8"
 D G "RS485_RX_PIN" 6 14 "PIN_C7" "Data receive pin"
 D G "RS485_TX_PIN" 6 15 "PIN_C6" "Data transmit pin"
 D G "RS485_ENABLE_PIN" 6 16 "PIN_A3" "Controls DE pin.  RX low, TX high."
-V G "TIME_MAKER" 6 22 "int8" `847 
-V G "REG_10ms" 6 22 "int8" `848 
-V G "REG_50ms" 6 22 "int8" `849 
-V G "REG_100ms" 6 22 "int8" `850 
-V G "REG_500ms" 6 22 "int8" `851 
-V G "REG_1s" 6 22 "int8" `852 
-V G "REG_10s" 6 22 "int8" `853 
-V G "DigitOrder" 6 23 "int8" `854 
-V G "DIGIT_1" 6 23 "int8" `855 
-V G "DIGIT_2" 6 23 "int8" `856 
-V G "DIGIT_3" 6 23 "int8" `857 
-V G "DIGIT_TEMP" 6 23 "int8" `858 
-V G "data" 6 24 "int8" `859 
-V G "BCD_100" 6 25 "int16" `860 
-V G "BCD_10" 6 25 "int16" `861 
-V G "BCD_1" 6 25 "int16" `862 
+V G "snd" 6 21 "int1" `847 
+V G "TIME_MAKER" 6 22 "int8" `848 
+V G "REG_10ms" 6 22 "int8" `849 
+V G "REG_50ms" 6 22 "int8" `850 
+V G "REG_100ms" 6 22 "int8" `851 
+V G "REG_500ms" 6 22 "int8" `852 
+V G "REG_1s" 6 22 "int8" `853 
+V G "REG_10s" 6 22 "int8" `854 
+V G "DigitOrder" 6 23 "int8" `855 
+V G "DIGIT_1" 6 23 "int8" `856 
+V G "DIGIT_2" 6 23 "int8" `857 
+V G "DIGIT_3" 6 23 "int8" `858 
+V G "DIGIT_TEMP" 6 23 "int8" `859 
+V G "data" 6 24 "int8" `860 
+V G "BCD_100" 6 25 "int16" `861 
+V G "BCD_10" 6 25 "int16" `862 
+V G "BCD_1" 6 25 "int16" `863 
 F N "DisplayDrive" 7 3 ""
-F G "DisplayDrive" 7 4 "void()" `863 
+F G "DisplayDrive" 7 4 "void()" `864 
 C L "Convert7Segment" 8 1 1 "FUNCTION"
 F N "Convert7Segment" 8 2 ""
-V L "ref" 8 2 "int8" `865 
-F G "Convert7Segment" 8 3 "void(int8 ref)" `864 
+V L "ref" 8 2 "int8" `866 
+F G "Convert7Segment" 8 3 "void(int8 ref)" `865 
 D G "RS485_DRIVER" 9 38 ""
 D G "RS485_USE_EXT_INT" 9 45 "FALSE" "Select between external interrupt"
 D G "RS485_RX_ENABLE" 9 63 "PIN_B5" "Controls RE pin.  Should keep low."
 D G "RCV_OFF" 9 70 "() {setup_uart(FALSE);}"
 D G "RS485_wait_time" 9 99 "20" "Wait time in milliseconds"
-V G "rs485_state" 9 107 "int8" `877 
-V G "rs485_ni" 9 107 "int8" `878 
-V G "rs485_no" 9 107 "int8" `879 
-V G "rs485_buffer" 9 108 "int8[8]" `880  "Purpose:    Enable data reception"
+V G "rs485_state" 9 107 "int8" `878 
+V G "rs485_ni" 9 107 "int8" `879 
+V G "rs485_no" 9 107 "int8" `880 
+V G "rs485_buffer" 9 108 "int8[8]" `881  "Purpose:    Enable data reception"
 C L "RCV_ON" 9 2 2 "FUNCTION"
 F N "RCV_ON" 9 114 ""
-F G "RCV_ON" 9 114 "void()" `881 
+F G "RCV_ON" 9 114 "void()" `882 
 C L "RCV_ON" 9 2 1 "FUNCTION"
 C L "rs485_init" 9 2 4 "FUNCTION"
 F N "rs485_init" 9 134 ""
-F G "rs485_init" 9 134 "void()" `882 
-V G "temp_ni" 9 151 "int8" `883  "Purpose:    Add a byte of data to the temporary receive buffer"
+F G "rs485_init" 9 134 "void()" `883 
+V G "temp_ni" 9 151 "int8" `884  "Purpose:    Add a byte of data to the temporary receive buffer"
 C L "rs485_add_to_temp" 9 2 2 "FUNCTION"
 F N "rs485_add_to_temp" 9 156 ""
-V L "b" 9 156 "int8" `885 
-F G "rs485_add_to_temp" 9 156 "void(int8 b)" `884  "Store the byte"
+V L "b" 9 156 "int8" `886 
+F G "rs485_add_to_temp" 9 156 "void(int8 b)" `885  "Store the byte"
 C L "rs485_add_to_temp" 9 2 1 "FUNCTION"
 F N "incomming_rs485" 9 174 ""
-F G "incomming_rs485" 9 174 "void()" `886 
-V L "b" 9 175 "int16" `887 
-V L "cs" 9 176 "int8" `888 
-V L "state" 9 176 "int8" `889 
-V L "len" 9 176 "int8" `890 
-V L "info" 9 176 "int8" `891 
-V L "data_address" 9 176 "int8" `892 
-V L "to" 9 177 "int16" `893 
-V L "source" 9 177 "int16" `894 
+F G "incomming_rs485" 9 174 "void()" `887 
+V L "b" 9 175 "int16" `888 
+V L "cs" 9 176 "int8" `889 
+V L "state" 9 176 "int8" `890 
+V L "len" 9 176 "int8" `891 
+V L "info" 9 176 "int8" `892 
+V L "data_address" 9 176 "int8" `893 
+V L "to" 9 177 "int16" `894 
+V L "source" 9 177 "int16" `895 
 C L "incomming_rs485" 9 2 1 "FUNCTION"
 C L "incomming_rs485" 9 2 1 "FUNCTION"
 C L "incomming_rs485" 9 2 1 "FUNCTION"
@@ -1866,48 +1867,48 @@ C L "incomming_rs485" 9 2 2 "FUNCTION"
 C L "incomming_rs485" 9 2 1 "FUNCTION"
 C L "rs485_send_message" 9 2 7 "FUNCTION"
 F N "rs485_send_message" 9 242 ""
-V L "to" 9 242 "int8" `896 
-V L "len" 9 242 "int8" `897 
-V L "data" 9 242 "*int8" `898 
-F G "rs485_send_message" 9 242 "int8(int8 to,int8 len,*int8 data)" `895 
-V L "try" 9 243 "int8" `899 
-V L "i" 9 243 "int8" `900 
-V L "cs" 9 243 "int8" `901 
-V L "ret" 9 244 "int1" `902 
-C L "rs485_send_message" 9 2 1 "FUNCTION"
+V L "to" 9 242 "int8" `897 
+V L "len" 9 242 "int8" `898 
+V L "data" 9 242 "*int8" `899 
+F G "rs485_send_message" 9 242 "int8(int8 to,int8 len,*int8 data)" `896 
+V L "try" 9 243 "int8" `900 
+V L "i" 9 243 "int8" `901 
+V L "cs" 9 243 "int8" `902 
+V L "ret" 9 244 "int1" `903 
 C L "rs485_wait_for_bus" 9 2 4 "FUNCTION"
-F N "rs485_wait_for_bus" 9 285 ""
-V L "clrwdt" 9 285 "int8" `904 
-F G "rs485_wait_for_bus" 9 286 "void(int8 clrwdt)" `903 
-V L "i" 9 287 "int16" `905 
+F N "rs485_wait_for_bus" 9 286 ""
+V L "clrwdt" 9 286 "int8" `905 
+F G "rs485_wait_for_bus" 9 287 "void(int8 clrwdt)" `904 
+V L "i" 9 288 "int16" `906 
 C L "rs485_get_message" 9 2 8 "FUNCTION"
-F N "rs485_get_message" 9 311 ""
-V L "data_ptr" 9 311 "*int8" `907 
-V L "wait" 9 311 "int8" `908 
-F G "rs485_get_message" 9 312 "int8(*int8 data_ptr,int8 wait)" `906 
-V L "n" 9 318 "int8" `909 
+F N "rs485_get_message" 9 312 ""
+V L "data_ptr" 9 312 "*int8" `908 
+V L "wait" 9 312 "int8" `909 
+F G "rs485_get_message" 9 313 "int8(*int8 data_ptr,int8 wait)" `907 
+V L "n" 9 319 "int8" `910 
 C L "TIMER0_isr" 0 26 1 "FUNCTION"
 F N "TIMER0_isr" 0 28 ""
 C L "TIMER0_isr" 0 26 1 "FUNCTION"
-F G "TIMER0_isr" 0 29 "void()" `910 
+F G "TIMER0_isr" 0 29 "void()" `911 
 C L "ConvertDECtoBCD" 0 26 1 "FUNCTION"
 F N "ConvertDECtoBCD" 0 36 ""
-V L "decimal" 0 36 "int16" `912 
-F G "ConvertDECtoBCD" 0 37 "void(int16 decimal)" `911 
+V L "decimal" 0 36 "int16" `913 
+F G "ConvertDECtoBCD" 0 37 "void(int16 decimal)" `912 
 C L "AssignDigits" 0 26 2 "FUNCTION"
 F N "AssignDigits" 0 44 ""
-V L "value" 0 44 "int16" `920 
-F G "AssignDigits" 0 45 "void(int16 value)" `919 
+V L "value" 0 44 "int16" `921 
+F G "AssignDigits" 0 45 "void(int16 value)" `920 
 F N "MAIN" 0 55 ""
-F G "MAIN" 0 56 "void()" `921 
+F G "MAIN" 0 56 "void()" `922 
 C L "MAIN" 0 26 1 "FUNCTION"
 C L "MAIN" 0 26 1 "FUNCTION"
-V L "ahmet" 0 89 "int8[1]" `924 
-V L "veli" 0 90 "int8" `925 
-V L "old_veli" 0 90 "int8" `926 
+V L "ahmet" 0 89 "int8[1]" `925 
+V L "veli" 0 90 "int8" `926 
+V L "old_veli" 0 90 "int8" `927 
+V L "reflected_msg" 0 91 "int8[3]" `928 
 C L "MAIN" 0 26 1 "FUNCTION"
 C L "MAIN" 0 26 1 "FUNCTION"
-C L "MAIN" 0 26 5 "FUNCTION"
+C L "MAIN" 0 26 3 "FUNCTION"
 C L "MAIN" 0 26 1 "FUNCTION"
 C L "MAIN" 0 26 1 "FUNCTION"
 C L "MAIN" 0 26 1 "FUNCTION"
